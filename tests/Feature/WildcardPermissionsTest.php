@@ -27,7 +27,7 @@ class WildcardPermissionsTest extends TestCase
             ]
         );
 
-        $this->be($user);
+//        $this->be($user);
 
         // ================================================================================================
         // == from example https://spatie.be/docs/laravel-permission/v3/basic-usage/wildcard-permissions
@@ -43,5 +43,7 @@ class WildcardPermissionsTest extends TestCase
         $this->assertTrue($user->can('posts.create'));
         $this->assertTrue($user->can('posts.edit'));
         $this->assertTrue($user->can('posts.delete'));
+
+        $this->assertFalse($user->can('belenkas'));
     }
 }
